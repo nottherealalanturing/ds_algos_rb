@@ -1,3 +1,5 @@
+require 'pry'
+
 class Node
     attr_accessor :data, :next
         
@@ -7,6 +9,7 @@ class Node
     end
     
 end
+
 
 class LinkedList
     def initialize(head = nil)
@@ -25,39 +28,61 @@ class LinkedList
         count
     end
 
-    def insert(data, pos)
+    def insertAtBegining(data)
         newNode = Node.new data
         currentNode = @head
-        count = 1
-        tempNode = nil;
-        if pos == 1
+        if currentNode != nil
             newNode.next = currentNode
             @head = newNode
         else
-            while (@head != nil && count < pos)
-                count += 1
-                tempNode = currentNode
-                currentNode = currentNode.next
-            end
-            tempNode.next = newNode
-            newNode.next = currentNode
+            @head = newNode
         end
+        newNode.data
+    end
+
+    def insertAtEnd(data)
+        newNode = Node.new data
+        currentNode = @head
+        while(currentNode.next != nil)
+            currentNode = currentNode.next
+        end
+        currentNode.next = newNode
+        newNode.data
+    end
+
+    def insertAtPos(data, pos)
+        newNode = Node.new data
+        tempNode = nil
+        currentNode = @head
+        count = 1;
+        while(currentNode != nil && count < pos)
+            tempNode = currentNode
+            currentNode = currentNode.next
+            count += 1
+        end
+        tempNode.next = newNode
+        newNode.next = currentNode
+        newNode.data
     end
 
     def print_list
         currentNode = @head
         while (currentNode)
             puts currentNode.data
+            currentNode = currentNode.next
         end
     end
 
 
 end
 
+#binding.pry
+
 list = LinkedList.new
 
-list.insert(1,1)
-list.insert(2,2)
-list.insert(4,4)
+list.insertAtBegining(1) #[1]
+list.insertAtEnd(2) #[1,2]
+list.insertAtPos(4,2) #[1,4,2]
 
 list.print_list
+
