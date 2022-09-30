@@ -77,6 +77,22 @@ class CLL
         end
     end
 
+    def deleteLastNode
+        if list_length < 1
+            return
+        elsif list_length == 1
+            @head = nil
+        else
+            tempNode = @head
+            current_node = nil
+            while(tempNode.next != @head)
+                current_node = tempNode
+                tempNode = tempNode.next
+            end
+            current_node.next = tempNode.next
+        end
+    end
+
 end
 
 list = CLL.new
