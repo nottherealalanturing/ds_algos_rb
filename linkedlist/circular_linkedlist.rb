@@ -99,11 +99,11 @@ class CLL
         elsif list_length == 1
             @head = nil
         else
-            tempNode = @head
-            while(tempNode.next != @head)
-                tempNode = tempNode.next
+            current_node = @head
+            while(current_node.next != @head)
+                current_node = current_node.next
             end
-            tempNode.next = @head.next
+            current_node.next = @head.next
             @head = @head.next
         end
     end
