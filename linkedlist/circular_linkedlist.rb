@@ -42,7 +42,7 @@ class CLL
         end
     end
 
-    def insertAtEnd(data)
+    def insertLast(data)
         current_node = @head
         new_cllnode = CLLNode.new(data)
         new_cllnode.next = new_cllnode
@@ -59,7 +59,7 @@ class CLL
         end
     end
 
-    def insertAtBegining(data)
+    def insertFirst(data)
         current_node = @head
         new_cllnode = CLLNode.new(data)
         new_cllnode.next = new_cllnode
@@ -77,7 +77,7 @@ class CLL
         end
     end
 
-    def deleteLastNode
+    def deleteLast
         if list_length < 1
             return
         elsif list_length == 1
@@ -93,7 +93,7 @@ class CLL
         end
     end
 
-    def deleteFirstNode
+    def deleteFirst
         if list_length < 1
             return
         elsif list_length == 1
