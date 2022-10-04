@@ -113,5 +113,10 @@ end
 
 list = CLL.new
 
+list.insertFirst(3)
+list.insertLast(4)
+list.insertFirst(2)
+list.insertFirst(1)
+
 
 binding.pry
