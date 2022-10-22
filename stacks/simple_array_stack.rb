@@ -4,4 +4,7 @@ class stack
     def initialize
     end
 
+    def push
+    end
+
 end
