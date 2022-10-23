@@ -7,4 +7,6 @@ class stack
     def push
     end
 
+    def pop
+    end
 end
