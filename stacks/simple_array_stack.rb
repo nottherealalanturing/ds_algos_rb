@@ -9,4 +9,8 @@ class stack
 
     def pop
     end
+
+    def size
+    end
+    
 end
