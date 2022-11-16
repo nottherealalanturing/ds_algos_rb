@@ -29,6 +29,13 @@ class ArrayQueue
         end
     end
 
-   
+    def dequeue
+        if isEmpty?
+            puts "queue underflow"
+        else
+            data = array[front]
+        end
+        
+    end
 
 end
