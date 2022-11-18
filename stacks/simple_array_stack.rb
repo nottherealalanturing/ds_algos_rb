@@ -1,3 +1,5 @@
+require 'pry'
+
 class Stack
     attr_reader :capacity, :array
 
@@ -33,3 +35,6 @@ class Stack
         end
     end
 end
+
+stack = Stack.new(5)
+pry.binding
