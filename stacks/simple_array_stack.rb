@@ -10,7 +10,7 @@ class Stack
 
     def push(data)
         if size == capacity
-            "Stack Overflow"
+            "Stack Overflow - cannot push"
         else
             array.push(data)
         end
@@ -18,7 +18,7 @@ class Stack
 
     def pop
         if size < 1
-            "Stack Underflow"
+            "Stack Underflow - cannot pop"
         else
             array.pop()
         end
