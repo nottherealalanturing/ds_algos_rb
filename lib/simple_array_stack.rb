@@ -1,4 +1,4 @@
-#require 'pry'
+require 'pry'
 
 class Stack
     attr_reader :capacity, :array
@@ -27,10 +27,6 @@ class Stack
     def size
         array.length
     end
-
-    def is_empty?
-        size == 0
-    end
     
     def print_stack
         array.each do |a| 
@@ -40,7 +36,5 @@ class Stack
     end
 end
 
-=begin 
-    stack = Stack.new(5)
-    pry.binding 
-=end
+stack = Stack.new(5)
+pry.binding
